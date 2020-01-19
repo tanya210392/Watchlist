@@ -1,7 +1,7 @@
 import React from 'react';
 
 import avatar from '../../assets/user.png';
-import {ReactComponent as Arrow} from '../../assets/black-arrow.svg';
+import arrow from '../../assets/black-arrow.png';
 import './UserMenu.scss'
 
 const UserMenu = (props) => {
@@ -15,7 +15,7 @@ const UserMenu = (props) => {
                 onClick={onToggleHandler}
             >
                 <p>{name}</p>
-                <Arrow />
+                <img src={arrow} alt="" />
             </div>
             { isShow ? <div className="dropdown">
                 <span>Sign Out</span>
