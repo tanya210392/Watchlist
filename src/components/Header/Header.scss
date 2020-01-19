@@ -1,0 +1,18 @@
+@import '../../styles/custom/variables';
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  border-bottom: 1px solid $border;
+
+  .mobile-menu {
+    display: none;
+
+    @media (max-width: $breakpoint-mobile) {
+      display: flex;
+      align-items: center;
+      padding-left: 15px;
+    }
+  }
+}

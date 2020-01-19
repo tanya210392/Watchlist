@@ -1,0 +1,22 @@
+@import '../../styles/custom/variables';
+
+main {
+  background: $gallery;
+
+  .content-wrapper {
+    max-width: 1026px;
+    background: $alabaster;
+    padding: 15px 50px 30px 50px;
+
+    h2.title {
+      color: $nice-blue;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: 15px;
+    }
+  }
+}

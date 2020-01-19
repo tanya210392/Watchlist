@@ -1,9 +1,25 @@
 import React from 'react';
 
-const UserMenu = () => {
+import avatar from '../../assets/user.png';
+import {ReactComponent as Arrow} from '../../assets/black-arrow.svg';
+import './UserMenu.scss'
+
+const UserMenu = (props) => {
+    const {onToggleHandler, name, isShow} = props;
+
     return (
-        <div>
-            USER
+        <div className={`UserMenu ${isShow ? "opened" : ""}`}>
+            <img src={avatar} alt=""/>
+            <div
+                className="user-name"
+                onClick={onToggleHandler}
+            >
+                <p>{name}</p>
+                <Arrow />
+            </div>
+            { isShow ? <div className="dropdown">
+                <span>Sign Out</span>
+            </div> : null }
         </div>
     );
 };

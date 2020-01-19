@@ -1,0 +1,66 @@
+@import '../../styles/custom/variables';
+
+.UserMenu {
+  padding: 8px 18px;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  img {
+    margin-right: 10px;
+  }
+
+  .user-name {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    p {
+      margin-right: 5px;
+      font-weight: bold;
+
+      @media (max-width: $breakpoint-mobile) {
+        display: none;
+      }
+    }
+
+    svg {
+      width: 7px;
+      height: 7px;
+    }
+  }
+
+  &.opened {
+    background: $gallery;
+
+    svg {
+      transform: rotate(180deg);
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 14px 18px;
+      background: $white;
+      border-top: 1px solid $border;
+
+      @media (max-width: $breakpoint-tablet) {
+        background: $gallery;
+      }
+
+      @media (max-width: $breakpoint-mobile) {
+        background: $white;
+        padding: 14px 0;
+        text-align: center;
+      }
+
+      span {
+        line-height: 1;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+  }
+}

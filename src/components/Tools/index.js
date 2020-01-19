@@ -4,6 +4,7 @@ import {TOOLS} from '../../constants/tools';
 import {ReactComponent as Bookmark} from '../../assets/bookmark.svg';
 import {ReactComponent as Like} from '../../assets/like.svg';
 import {ReactComponent as Dislike} from '../../assets/dislike.svg';
+import './Tools.scss';
 
 const Tools = () => {
     const tools = TOOLS.map(item => (
@@ -13,7 +14,7 @@ const Tools = () => {
         </div>
     ));
     return (
-        <div className="tools">
+        <div className="Tools">
             {tools}
         </div>
     );
