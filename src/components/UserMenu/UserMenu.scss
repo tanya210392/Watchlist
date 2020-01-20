@@ -33,7 +33,7 @@
   &.opened {
     background: $gallery;
 
-    img {
+    .user-name img {
       transform: rotate(180deg);
     }
   }
