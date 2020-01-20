@@ -36,31 +36,5 @@
     img {
       transform: rotate(180deg);
     }
-
-    .dropdown {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      padding: 14px 18px;
-      background: $white;
-      border-top: 1px solid $border;
-
-      @media (max-width: $breakpoint-tablet) {
-        background: $gallery;
-      }
-
-      @media (max-width: $breakpoint-mobile) {
-        background: $white;
-        padding: 14px 0;
-        text-align: center;
-      }
-
-      span {
-        line-height: 1;
-        font-weight: bold;
-        cursor: pointer;
-      }
-    }
   }
 }

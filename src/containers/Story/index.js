@@ -1,10 +1,10 @@
-import React, {Component, Fragment} from 'react';
-// import PropTypes from 'prop-types';
+import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 
 import Tools from '../../components/Tools';
-import {ReactComponent as Arrow} from '../../assets/arrow.svg';
-import {ReactComponent as Twitter} from '../../assets/twitter.svg';
+import { ReactComponent as Arrow } from '../../assets/arrow.svg';
+import { ReactComponent as Twitter } from '../../assets/twitter.svg';
 import './Story.scss';
 
 class Story extends Component {
@@ -13,20 +13,21 @@ class Story extends Component {
         isShow: false
     };
 
-    kFormatter = (num) => {
-        return Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num)
-    };
+    kFormatter = (num) => Math.abs(num) > 999 ?
+        Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' :
+        Math.sign(num)*Math.abs(num);
 
     onToggleHandler = () => {
         this.setState(prevState => {
             return {
                 isShow: !prevState.isShow
             }
-        })
+        });
     };
 
     render () {
-        const {type, src, url, title, domainName, publishTime, description, score, authorScreenName, authorFollowersCount} = this.props;
+        const {type, domainLogoUrl, url, title, domainName, publishTime, description,
+            score, authorScreenName, authorFollowersCount} = this.props;
         let {authorImageUrl} = this.props;
         const {imageLoadError, isShow} = this.state;
 
@@ -41,7 +42,7 @@ class Story extends Component {
                         type === "Story" ? (
                             <Fragment>
                                 <div className="domain-logo">
-                                    <img src={src} alt=""/>
+                                    <img src={domainLogoUrl} alt=""/>
                                 </div>
                                 <div className="text">
                                     <a
@@ -85,7 +86,7 @@ class Story extends Component {
                                     <div className="score">{score} %</div>
                                     <button
                                         onClick={this.onToggleHandler}
-                                        className={`toggle-btn ${isShow ? "hide" : "show"}`}
+                                        className={`toggle-btn ${ isShow ? "hide" : "show" }`}
                                     >
                                         <Arrow/>
                                         <span className="less">{isShow ? "Less" : "More"}<Arrow/></span>
@@ -99,7 +100,20 @@ class Story extends Component {
             </div>
         );
     }
-
 }
+
+Story.propTypes = {
+    type: PropTypes.string.isRequired,
+    domainLogoUrl: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    domainName: PropTypes.string.isRequired,
+    publishTime: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    score: PropTypes.number.isRequired,
+    authorImageUrl: PropTypes.string,
+    authorScreenName: PropTypes.string,
+    url: PropTypes.string.isRequired,
+    authorFollowersCount: PropTypes.number,
+};
 
 export default Story;

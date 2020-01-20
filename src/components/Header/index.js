@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Logo from '../Logo';
 import UserMenu from '../UserMenu';
-import {ReactComponent as MobileMenu} from '../../assets/mobile-menu.svg';
+import { ReactComponent as MobileMenu } from '../../assets/mobile-menu.svg';
 import './Header.scss';
 
 const Header = ({onToggleHandler, isShow}) => {
@@ -18,6 +19,11 @@ const Header = ({onToggleHandler, isShow}) => {
                 name="Jane Doe" />
         </div>
     );
+};
+
+Header.propTypes = {
+    onToggleHandler: PropTypes.func,
+    isShow: PropTypes.bool,
 };
 
 export default Header;

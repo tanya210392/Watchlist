@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react';
+import PropTypes from 'prop-types';
 
-import Header from '../Header';
+import Header from '../../components/Header';
 import './Layout.scss';
 
 class Layout extends Component {
@@ -24,11 +25,6 @@ class Layout extends Component {
                 <Header
                     isShow={isShow}
                     onToggleHandler={this.onToggleHandler} />
-                {/*<Toolbar drawerToggleClicked={this.sideDrawerToggleHandler} />*/}
-                {/*<SideDrawer*/}
-                {/*    closed={this.sideDrawerClosedHandler}*/}
-                {/*    open={this.state.showSideDrower}*/}
-                {/*/>*/}
                 <main>
                     <div className="content-wrapper">
                         <h2 className="title">Watchlist</h2>
@@ -39,5 +35,9 @@ class Layout extends Component {
         );
     }
 }
+
+Layout.propTypes = {
+    children: PropTypes.element.isRequired
+};
 
 export default Layout;
